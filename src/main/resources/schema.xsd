@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.example.org/banks"
+        xmlns:tns="http://www.example.org/banks"
+        elementFormDefault="qualified">
+    <element name="banks">
+        <complexType>
+            <sequence>
+                <element ref="tns:bank" maxOccurs="unbounded" />
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="bank">
+        <sequence>
+            <element name="name" type="string" />
+            <element name="country" type="tns:country" />
+            <element name="type" type="tns:type" />
+            <element name="depositor" type="string" />
+            <element name="amount-on-deposit" type="unsignedInt" />
+            <element name="profitability" type="tns:percent" />
+            <element name="time-constraints" type="gYearMonth" />
+        </sequence>
+        <attribute name="id" type="tns:accountID" use="required" />
+    </complexType>
+
+    <complexType name="privateBank">
+        <complexContent>
+            <extension base="tns:bank">
+                <sequence>
+                    <element name="private-bank-names" type="tns:privateBankNames" />
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="nationalBank">
+        <complexContent>
+            <extension base="tns:bank">
+                <sequence>
+                    <element name="national-bank-names" type="tns:nationalBankNames" />
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <simpleType name="accountID">
+        <restriction base="ID">
+            <pattern value="\w{1,20}" />
+        </restriction>
+    </simpleType>
+
+    <simpleType name="country">
+        <restriction base="string">
+            <enumeration value="BELARUS" />
+            <enumeration value="POLAND" />
+            <enumeration value="RUSSIA" />
+            <enumeration value="CHINA" />
+            <enumeration value="USA" />
+            <enumeration value="AUSTRIA" />
+            <enumeration value="BELGIUM" />
+            <enumeration value="BULGARIA" />
+            <enumeration value="GERMANY" />
+            <enumeration value="GREECE" />
+            <enumeration value="SPAIN" />
+            <enumeration value="FRANCE" />
+            <enumeration value="SWEDEN" />
+            <enumeration value="SWITZERLAND" />
+        </restriction>
+    </simpleType>
+
+    <simpleType name="type">
+        <restriction base="string">
+            <enumeration value="POSTE-RESTANTE" />
+            <enumeration value="TERM" />
+            <enumeration value="SETTLEMENT" />
+            <enumeration value="CUMULATIVE" />
+            <enumeration value="SAVINGS" />
+            <enumeration value="METAL" />
+        </restriction>
+    </simpleType>
+
+    <simpleType name="percent">
+        <restriction base="unsignedInt">
+            <minInclusive value="0" />
+            <maxInclusive value="100" />
+        </restriction>
+    </simpleType>
+
+    <simpleType name="privateBankNames">
+        <restriction base="string">
+            <enumeration value="ALFA-BANK" />
+            <enumeration value="VTB-BANK" />
+            <enumeration value="BNB-BANK" />
+            <enumeration value="BPS-SBERBANK" />
+            <enumeration value="IDEA-BANK" />
+            <enumeration value="MTBANK" />
+            <enumeration value="PARITETBANK" />
+            <enumeration value="PRIORBANK" />
+            <enumeration value="STATUSBANK" />
+            <enumeration value="TECHNOBANK" />
+        </restriction>
+    </simpleType>
+
+    <simpleType name="nationalBankNames">
+        <restriction base="string">
+            <enumeration value="BELAGROPROMBANK" />
+            <enumeration value="ASB-BELARUSBANK" />
+            <enumeration value="BELINVESTBANK" />
+        </restriction>
+    </simpleType>
+
+    <element name="bank" type="tns:bank" abstract="true" />
+    <element name="private-bank" type="tns:privateBank" substitutionGroup="tns:bank" />
+    <element name="national-bank" type="tns:nationalBank" substitutionGroup="tns:bank" />
+</schema>
