@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<banks xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://www.example.org/banks"
+         xsi:schemaLocation="http://www.example.org/banks schema.xsd">
+
+
+    <private-bank id="ad01b1" profitability="10">
+        <name>Belarusbank</name>
+        <country>BELARUS</country>
+        <type>CUMULATIVE</type>
+        <depositor>Ivanov I.I.</depositor>
+        <amount-on-deposit>10000</amount-on-deposit>
+        <time-constraints>2021-09</time-constraints>
+        <credit-rate>19</credit-rate>
+        <mortgage-rate>25</mortgage-rate>
+    </private-bank>
+
+    <private-bank id="ad02b1" bank-type="SAVINGS">
+        <name>Alfa-Bank</name>
+        <country>RUSSIA</country>
+        <type>SAVINGS</type>
+        <depositor>Petrov P.P.</depositor>
+        <amount-on-deposit>50000</amount-on-deposit>
+        <time-constraints>2022-07</time-constraints>
+        <credit-rate>15</credit-rate>
+        <mortgage-rate>20</mortgage-rate>
+    </private-bank>
+
+    <private-bank id="ad03b1" profitability="2" bank-type="SAVINGS">
+        <name>UBS</name>
+        <country>SWITZERLAND</country>
+        <type>SAVINGS</type>
+        <depositor>Putin V.V.</depositor>
+        <amount-on-deposit>1000000000</amount-on-deposit>
+        <time-constraints>2025-09</time-constraints>
+        <credit-rate>7</credit-rate>
+        <mortgage-rate>4</mortgage-rate>
+    </private-bank>
+
+    <private-bank id="ad04b1" profitability="15" bank-type="INVESTMENT">
+        <name>Citigroup</name>
+        <country>USA</country>
+        <type>CUMULATIVE</type>
+        <depositor>Smit I.</depositor>
+        <amount-on-deposit>700000</amount-on-deposit>
+        <time-constraints>2023-01</time-constraints>
+        <credit-rate>10</credit-rate>
+        <mortgage-rate>4</mortgage-rate>
+    </private-bank>
+
+    <private-bank id="ad05b1" bank-type="EMISSIVE">
+        <name>Truist</name>
+        <country>USA</country>
+        <type>TERM</type>
+        <depositor>Jonson B.</depositor>
+        <amount-on-deposit>20000000</amount-on-deposit>
+        <time-constraints>2022-09</time-constraints>
+        <credit-rate>9</credit-rate>
+        <mortgage-rate>7</mortgage-rate>
+    </private-bank>
+
+    <private-bank id="ad06b1" profitability="15" bank-type="INVESTMENT">
+        <name>Comdirekt</name>
+        <country>GERMANY</country>
+        <type>CUMULATIVE</type>
+        <depositor>Hans C.</depositor>
+        <amount-on-deposit>800000</amount-on-deposit>
+        <time-constraints>2023-01</time-constraints>
+        <credit-rate>11</credit-rate>
+        <mortgage-rate>12</mortgage-rate>
+    </private-bank>
+
+
+    <national-bank id="nb01b1" profitability="3">
+        <name>Belagroprombank</name>
+        <country>BELARUS</country>
+        <type>CUMULATIVE</type>
+        <depositor>Sidorov S.V.</depositor>
+        <amount-on-deposit>8000</amount-on-deposit>
+        <time-constraints>2022-01</time-constraints>
+        <refinancing-rate>9</refinancing-rate>
+    </national-bank>
+
+    <national-bank id="nb02b1" profitability="5" bank-type="EMISSIVE">
+        <name>Сentral bank</name>
+        <country>RUSSIA</country>
+        <type>METAL</type>
+        <depositor>Petrov S.V.</depositor>
+        <amount-on-deposit>8000000000</amount-on-deposit>
+        <time-constraints>2026-01</time-constraints>
+        <refinancing-rate>8</refinancing-rate>
+    </national-bank>
+
+    <national-bank id="nb03b1" bank-type="EMISSIVE">
+        <name>Belgische Nationalbank</name>
+        <country>BELGIUM</country>
+        <type>METAL</type>
+        <depositor>Saimons P.P.</depositor>
+        <amount-on-deposit>12000000000</amount-on-deposit>
+        <time-constraints>2022-01</time-constraints>
+        <refinancing-rate>6</refinancing-rate>
+    </national-bank>
+
+    <national-bank id="nb04b1" bank-type="EMISSIVE">
+        <name>Central bank of Spain</name>
+        <country>SPAIN</country>
+        <type>SAVINGS</type>
+        <depositor>Carls T.</depositor>
+        <amount-on-deposit>19000000000</amount-on-deposit>
+        <time-constraints>2027-01</time-constraints>
+        <refinancing-rate>5</refinancing-rate>
+    </national-bank>
+
+    <national-bank id="nb05b1" bank-type="SAVINGS">
+        <name>National Bank of Greece SA, NBG</name>
+        <country>GREECE</country>
+        <type>SAVINGS</type>
+        <depositor>Georgios G.</depositor>
+        <amount-on-deposit>7000000000</amount-on-deposit>
+        <time-constraints>2025-01</time-constraints>
+        <refinancing-rate>9</refinancing-rate>
+    </national-bank>
+</banks>
