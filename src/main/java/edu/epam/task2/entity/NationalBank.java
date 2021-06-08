@@ -3,7 +3,7 @@ package edu.epam.task2.entity;
 import java.time.YearMonth;
 
 public class NationalBank extends Banks {
-    private NationalBankNames nationalBankName;
+    private int refinancingRate;
 
     public NationalBank(String name,
                        Country country,
@@ -13,23 +13,24 @@ public class NationalBank extends Banks {
                        int profitability,
                        YearMonth timeConstraints,
                        String accountID,
-                        NationalBankNames nationalBankName) {
-        super(name, country, type, depositor, amountOnDeposit, profitability, timeConstraints, accountID);
-        this.nationalBankName = nationalBankName;
+                       int refinancingRate,
+                       BankType bankType) {
+        super(name, country, type, depositor, amountOnDeposit, timeConstraints, accountID, profitability, bankType);
+        this.refinancingRate = refinancingRate;
     }
 
-    public NationalBankNames getNationalBankName() {
-        return nationalBankName;
+    public int getNationalBankName() {
+        return refinancingRate;
     }
 
-    public void setNationalBankName(NationalBankNames nationalBankName) {
-        this.nationalBankName = nationalBankName;
+    public void setNationalBankName(int nationalBankName) {
+        this.refinancingRate = refinancingRate;
     }
 
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder(super.toString());
-        result.append("; NationalBankNames = ").append(this.nationalBankName);
+        result.append("; refinancing-rate = ").append(this.refinancingRate);
         return result.toString();
     }
 }

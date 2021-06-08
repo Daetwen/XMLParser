@@ -3,33 +3,46 @@ package edu.epam.task2.entity;
 import java.time.YearMonth;
 
 public class PrivateBank extends Banks {
-    private PrivateBankNames privateBankName;
+    private int creditRate;
+    private int mortgageRate;
 
     public PrivateBank(String name,
                        Country country,
                        DepositType type,
                        String depositor,
                        int amountOnDeposit,
-                       int profitability,
                        YearMonth timeConstraints,
                        String accountID,
-                       PrivateBankNames privateBankNames) {
-        super(name, country, type, depositor, amountOnDeposit, profitability, timeConstraints, accountID);
-        this.privateBankName = privateBankNames;
+                       int profitability,
+                       BankType bankType,
+                       int creditRate,
+                       int mortgageRate) {
+        super(name, country, type, depositor, amountOnDeposit, timeConstraints, accountID, profitability, bankType);
+        this.creditRate = creditRate;
+        this.mortgageRate = mortgageRate;
     }
 
-    public PrivateBankNames getPrivateBankNames() {
-        return privateBankName;
+    public int getCreditRate() {
+        return creditRate;
     }
 
-    public void setPrivateBankNames(PrivateBankNames privateBankNames) {
-        this.privateBankName = privateBankNames;
+    public void setCreditRate(int creditRate) {
+        this.creditRate = creditRate;
+    }
+
+    public int getMortgageRate() {
+        return mortgageRate;
+    }
+
+    public void setMortgageRate(int mortgageRate) {
+        this.mortgageRate = mortgageRate;
     }
 
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder(super.toString());
-        result.append("; PrivateBankNames = ").append(this.privateBankName);
+        result.append("; credit-rate = ").append(this.creditRate);
+        result.append("; mortgage-rate = ").append(this.mortgageRate);
         return result.toString();
     }
 }

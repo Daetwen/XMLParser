@@ -3,10 +3,11 @@
         targetNamespace="http://www.example.org/banks"
         xmlns:tns="http://www.example.org/banks"
         elementFormDefault="qualified">
+
     <element name="banks">
         <complexType>
             <sequence>
-                <element ref="tns:bank" maxOccurs="unbounded" />
+                <element ref="tns:bank" minOccurs="1" maxOccurs="unbounded" />
             </sequence>
         </complexType>
     </element>
@@ -17,18 +18,20 @@
             <element name="country" type="tns:country" />
             <element name="type" type="tns:type" />
             <element name="depositor" type="string" />
-            <element name="amount-on-deposit" type="unsignedInt" />
-            <element name="profitability" type="tns:percent" />
+            <element name="amount-on-deposit" type="long" />
             <element name="time-constraints" type="gYearMonth" />
         </sequence>
         <attribute name="id" type="tns:accountID" use="required" />
+        <attribute name="profitability" type="tns:percent" use="optional" default="0" />
+        <attribute name="bank-type" use="optional" default="COMMERCIAL" />
     </complexType>
 
     <complexType name="privateBank">
         <complexContent>
             <extension base="tns:bank">
                 <sequence>
-                    <element name="private-bank-names" type="tns:privateBankNames" />
+                    <element name="credit-rate" type="unsignedInt" minOccurs="0" maxOccurs="100" />
+                    <element name="mortgage-rate" type="unsignedInt" minOccurs="0" maxOccurs="100" />
                 </sequence>
             </extension>
         </complexContent>
@@ -38,7 +41,7 @@
         <complexContent>
             <extension base="tns:bank">
                 <sequence>
-                    <element name="national-bank-names" type="tns:nationalBankNames" />
+                    <element name="refinancing-rate" type="unsignedInt" minOccurs="0" maxOccurs="100" />
                 </sequence>
             </extension>
         </complexContent>
@@ -46,7 +49,7 @@
 
     <simpleType name="accountID">
         <restriction base="ID">
-            <pattern value="\w{1,20}" />
+            <pattern value="\w{1,7}" />
         </restriction>
     </simpleType>
 
@@ -87,26 +90,12 @@
         </restriction>
     </simpleType>
 
-    <simpleType name="privateBankNames">
+    <simpleType name="bank-type">
         <restriction base="string">
-            <enumeration value="ALFA-BANK" />
-            <enumeration value="VTB-BANK" />
-            <enumeration value="BNB-BANK" />
-            <enumeration value="BPS-SBERBANK" />
-            <enumeration value="IDEA-BANK" />
-            <enumeration value="MTBANK" />
-            <enumeration value="PARITETBANK" />
-            <enumeration value="PRIORBANK" />
-            <enumeration value="STATUSBANK" />
-            <enumeration value="TECHNOBANK" />
-        </restriction>
-    </simpleType>
-
-    <simpleType name="nationalBankNames">
-        <restriction base="string">
-            <enumeration value="BELAGROPROMBANK" />
-            <enumeration value="ASB-BELARUSBANK" />
-            <enumeration value="BELINVESTBANK" />
+            <enumeration value="COMMERCIAL" />
+            <enumeration value="EMISSIVE" />
+            <enumeration value="SAVINGS" />
+            <enumeration value="INVESTMENT" />
         </restriction>
     </simpleType>
 

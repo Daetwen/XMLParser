@@ -8,13 +8,20 @@ public class Banks {
     private Country country;
     private DepositType type;
     private String depositor;
-    private int amountOnDeposit;
-    private int profitability;
+    private long amountOnDeposit;
     private YearMonth timeConstraints;
     private String accountID;
+    private int profitability;
+    private BankType bankType;
+
+    private static String DEFAULT_ID = "";
+    private static int DEFAULT_PROFITABILITY = 0;
+    private static BankType DEFAULT_BANK_TYPE = BankType.COMMERCIAL;
 
     public Banks() {
-        this.accountID = "";
+        this.accountID = DEFAULT_ID;
+        this.profitability = DEFAULT_PROFITABILITY;
+        this.bankType = DEFAULT_BANK_TYPE;
     }
 
     public Banks(String name,
@@ -22,17 +29,19 @@ public class Banks {
                  DepositType type,
                  String depositor,
                  int amountOnDeposit,
-                 int profitability,
                  YearMonth timeConstraints,
-                 String accountID) {
+                 String accountID,
+                 int profitability,
+                 BankType bankType) {
         this.name = name;
         this.country = country;
         this.type = type;
         this.depositor = depositor;
         this.amountOnDeposit = amountOnDeposit;
-        this.profitability = profitability;
         this.timeConstraints = timeConstraints;
         this.accountID = accountID;
+        this.profitability = profitability;
+        this.bankType = bankType;
     }
 
     public String getName() {
@@ -51,12 +60,8 @@ public class Banks {
         return this.depositor;
     }
 
-    public int getAmountOnDeposit() {
+    public long getAmountOnDeposit() {
         return this.amountOnDeposit;
-    }
-
-    public int getProfitability() {
-        return this.profitability;
     }
 
     public YearMonth getTimeConstraints() {
@@ -65,6 +70,14 @@ public class Banks {
 
     public String getAccountID() {
         return this.accountID;
+    }
+
+    public int getProfitability() {
+        return this.profitability;
+    }
+
+    public BankType getBankType() {
+        return bankType;
     }
 
     public void setName(String name) {
@@ -83,12 +96,8 @@ public class Banks {
         this.depositor = depositor;
     }
 
-    public void setAmountOnDeposit(int amountOnDeposit) {
+    public void setAmountOnDeposit(long amountOnDeposit) {
         this.amountOnDeposit = amountOnDeposit;
-    }
-
-    public void setProfitability(int profitability) {
-        this.profitability = profitability;
     }
 
     public void setTimeConstraints(YearMonth timeConstraints) {
@@ -97,6 +106,14 @@ public class Banks {
 
     public void setAccountID(String accountID) {
         this.accountID = accountID;
+    }
+
+    public void setProfitability(int profitability) {
+        this.profitability = profitability;
+    }
+
+    public void setBankType(BankType bankType) {
+        this.bankType = bankType;
     }
 
     @Override
@@ -110,6 +127,7 @@ public class Banks {
         result.append("; amount on deposit = ").append(this.amountOnDeposit);
         result.append("; profitability = ").append(this.profitability);
         result.append("; time constraints = ").append(this.timeConstraints);
+        result.append("; bank type = ").append(this.bankType);
         return result.toString();
     }
 }
