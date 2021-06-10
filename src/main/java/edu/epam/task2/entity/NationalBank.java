@@ -5,6 +5,10 @@ import java.time.YearMonth;
 public class NationalBank extends Banks {
     private int refinancingRate;
 
+    public NationalBank() {
+        refinancingRate = 0;
+    }
+
     public NationalBank(String name,
                        Country country,
                        DepositType type,
@@ -19,11 +23,11 @@ public class NationalBank extends Banks {
         this.refinancingRate = refinancingRate;
     }
 
-    public int getNationalBankName() {
+    public int getRefinancingRate() {
         return refinancingRate;
     }
 
-    public void setNationalBankName(int nationalBankName) {
+    public void setRefinancingRate(int refinancingRate) {
         this.refinancingRate = refinancingRate;
     }
 
@@ -31,6 +35,7 @@ public class NationalBank extends Banks {
     public String toString() {
         StringBuilder result = new StringBuilder(super.toString());
         result.append("; refinancing-rate = ").append(this.refinancingRate);
+        result.append("\n");
         return result.toString();
     }
 }

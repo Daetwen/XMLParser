@@ -1,6 +1,7 @@
 package edu.epam.task2.entity;
 
 import java.time.YearMonth;
+import java.util.Objects;
 
 public class Banks {
 
@@ -114,6 +115,40 @@ public class Banks {
 
     public void setBankType(BankType bankType) {
         this.bankType = bankType;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        }
+        if (object == null || getClass() != object.getClass()) {
+            return false;
+        }
+        Banks banks = (Banks) object;
+        return this.amountOnDeposit == banks.amountOnDeposit &&
+                this.profitability == banks.profitability &&
+                Objects.equals(this.name, banks.name) &&
+                this.country == banks.country &&
+                this.type == banks.type &&
+                Objects.equals(this.depositor, banks.depositor) &&
+                Objects.equals(this.timeConstraints, banks.timeConstraints) &&
+                Objects.equals(this.accountID, banks.accountID) &&
+                this.bankType == banks.bankType;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(
+                name,
+                country,
+                type,
+                depositor,
+                amountOnDeposit,
+                timeConstraints,
+                accountID,
+                profitability,
+                bankType);
     }
 
     @Override

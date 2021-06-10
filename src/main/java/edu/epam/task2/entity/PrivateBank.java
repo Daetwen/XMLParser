@@ -6,6 +6,11 @@ public class PrivateBank extends Banks {
     private int creditRate;
     private int mortgageRate;
 
+    public PrivateBank() {
+        creditRate = 0;
+        mortgageRate = 0;
+    }
+
     public PrivateBank(String name,
                        Country country,
                        DepositType type,
@@ -43,6 +48,7 @@ public class PrivateBank extends Banks {
         StringBuilder result = new StringBuilder(super.toString());
         result.append("; credit-rate = ").append(this.creditRate);
         result.append("; mortgage-rate = ").append(this.mortgageRate);
+        result.append("\n");
         return result.toString();
     }
 }
