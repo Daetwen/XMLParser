@@ -14,8 +14,8 @@ public enum BanksTagsEnum {
     MORTGAGE_RATE,
     REFINANCING_RATE;
 
-    private static char UPPER_HYPHEN = '-';
-    private static char LOWER_UNDERSCORE = '_';
+    private char UPPER_HYPHEN = '-';
+    private char LOWER_UNDERSCORE = '_';
 
     @Override
     public String toString() {

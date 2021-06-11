@@ -3,7 +3,7 @@ package edu.epam.task2.entity;
 import java.time.YearMonth;
 import java.util.Objects;
 
-public class Banks {
+public abstract class Banks {
 
     private String name;
     private Country country;

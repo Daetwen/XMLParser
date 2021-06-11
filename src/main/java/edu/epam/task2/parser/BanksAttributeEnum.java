@@ -5,8 +5,8 @@ public enum BanksAttributeEnum {
     PROFITABILITY,
     BANK_TYPE;
 
-    private static char UPPER_HYPHEN = '-';
-    private static char LOWER_UNDERSCORE = '_';
+    private char UPPER_HYPHEN = '-';
+    private char LOWER_UNDERSCORE = '_';
 
     @Override
     public String toString() {
