@@ -1,6 +1,7 @@
 package edu.epam.task2.entity;
 
 import java.time.YearMonth;
+import java.util.Objects;
 
 public class PrivateBank extends Banks {
     private int creditRate;
@@ -41,6 +42,26 @@ public class PrivateBank extends Banks {
 
     public void setMortgageRate(int mortgageRate) {
         this.mortgageRate = mortgageRate;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        }
+        if (object == null || getClass() != object.getClass()) {
+            return false;
+        }
+        if (!super.equals(object)) {
+            return false;
+        }
+        PrivateBank that = (PrivateBank) object;
+        return creditRate == that.creditRate && mortgageRate == that.mortgageRate;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), creditRate, mortgageRate);
     }
 
     @Override

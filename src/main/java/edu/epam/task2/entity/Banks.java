@@ -29,7 +29,7 @@ public abstract class Banks {
                  Country country,
                  DepositType type,
                  String depositor,
-                 int amountOnDeposit,
+                 long amountOnDeposit,
                  YearMonth timeConstraints,
                  String accountID,
                  int profitability,

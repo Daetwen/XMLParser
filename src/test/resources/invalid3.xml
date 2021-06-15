@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<banks xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.example.org/banks"
+       xsi:schemaLocation="http://www.example.org/banks schema.xsd">
+
+
+    <private-bank id="ad01b1" profitability="10">
+        <name>Belarusbank</name>
+        <country>BELARUSS</country>
+        <type>CUMULATIVE</type>
+        <depositor>Ivanov I.I.</depositor>
+        <amount-on-deposit>10000</amount-on-deposit>
+        <time-constraints>2021-09</time-constraints>
+        <credit-rate>19</credit-rate>
+        <mortgage-rate>25</mortgage-rate>
+    </private-bank>
+
+</banks>

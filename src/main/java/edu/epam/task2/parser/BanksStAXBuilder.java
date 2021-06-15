@@ -16,7 +16,7 @@ import java.time.YearMonth;
 import java.util.HashSet;
 import java.util.Set;
 
-public class BanksStAXBuilder {
+public class BanksStAXBuilder extends AbstractBankBuilder {
     private static Logger logger = LogManager.getLogger();
     private Set<Banks> banks;
     private XMLInputFactory factory;
@@ -32,6 +32,7 @@ public class BanksStAXBuilder {
         return banks;
     }
 
+    @Override
     public void buildSetBanks(String filename) throws BanksException {
         FileInputStream inputStream = null;
         XMLStreamReader reader = null;

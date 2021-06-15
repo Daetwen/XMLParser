@@ -18,7 +18,7 @@ import java.time.YearMonth;
 import java.util.HashSet;
 import java.util.Set;
 
-public class BanksDOMBuilder {
+public class BanksDOMBuilder extends AbstractBankBuilder {
 
     private static Logger logger = LogManager.getLogger();
     private Set<Banks> banks;
@@ -41,6 +41,7 @@ public class BanksDOMBuilder {
         return this.banks;
     }
 
+    @Override
     public void buildSetBanks(String filename) throws BanksException {
         Document document;
         try {

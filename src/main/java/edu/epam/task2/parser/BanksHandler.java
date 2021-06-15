@@ -57,7 +57,7 @@ public class BanksHandler extends DefaultHandler {
         } else {
             BanksTagsEnum localBanksTagsEnum = BanksTagsEnum.valueOf(
                     qName
-                    .strip()
+                    .trim()
                     .replace(UPPER_HYPHEN, LOWER_UNDERSCORE)
                     .toUpperCase());
             if (withText.contains(localBanksTagsEnum)) {

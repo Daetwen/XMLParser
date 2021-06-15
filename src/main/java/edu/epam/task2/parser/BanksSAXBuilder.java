@@ -13,7 +13,7 @@ import javax.xml.parsers.SAXParserFactory;
 import java.io.IOException;
 import java.util.Set;
 
-public class BanksSAXBuilder {
+public class BanksSAXBuilder extends AbstractBankBuilder {
 
     private static Logger logger = LogManager.getLogger();
     private Set<Banks> banks;
@@ -36,6 +36,7 @@ public class BanksSAXBuilder {
         return this.banks;
     }
 
+    @Override
     public void buildSetBanks(String filename) throws BanksException {
         try {
             reader.parse(filename);
