@@ -1,4 +1,4 @@
-package edu.epam.task2.parser;
+package edu.epam.task2.entity;
 
 public enum BanksAttributeEnum {
     ID,
