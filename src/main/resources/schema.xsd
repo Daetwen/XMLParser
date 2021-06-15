@@ -74,7 +74,7 @@
 
     <simpleType name="type">
         <restriction base="string">
-            <enumeration value="POSTE-RESTANTE" />
+            <enumeration value="POSTE_RESTANTE" />
             <enumeration value="TERM" />
             <enumeration value="SETTLEMENT" />
             <enumeration value="CUMULATIVE" />

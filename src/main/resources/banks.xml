@@ -70,6 +70,28 @@
         <mortgage-rate>12</mortgage-rate>
     </private-bank>
 
+    <private-bank id="ad07b1" profitability="15" bank-type="INVESTMENT">
+        <name>BNP Paribas</name>
+        <country>FRANCE</country>
+        <type>CUMULATIVE</type>
+        <depositor>Zherar M.</depositor>
+        <amount-on-deposit>678000</amount-on-deposit>
+        <time-constraints>2024-01</time-constraints>
+        <credit-rate>15</credit-rate>
+        <mortgage-rate>17</mortgage-rate>
+    </private-bank>
+
+    <private-bank profitability="15" id="ad08b1">
+        <name>Societe Generale</name>
+        <country>FRANCE</country>
+        <type>POSTE_RESTANTE</type>
+        <depositor>Mihael K.</depositor>
+        <amount-on-deposit>9878000</amount-on-deposit>
+        <time-constraints>2021-09</time-constraints>
+        <credit-rate>9</credit-rate>
+        <mortgage-rate>17</mortgage-rate>
+    </private-bank>
+
 
     <national-bank id="nb01b1" profitability="3">
         <name>Belagroprombank</name>
@@ -119,5 +141,35 @@
         <amount-on-deposit>7000000000</amount-on-deposit>
         <time-constraints>2025-01</time-constraints>
         <refinancing-rate>9</refinancing-rate>
+    </national-bank>
+
+    <national-bank id="nb06b1" bank-type="SAVINGS">
+        <name>Banca Nazionale Svizzera</name>
+        <country>SWITZERLAND</country>
+        <type>SAVINGS</type>
+        <depositor>Fuller S.</depositor>
+        <amount-on-deposit>90000000000</amount-on-deposit>
+        <time-constraints>2030-01</time-constraints>
+        <refinancing-rate>8</refinancing-rate>
+    </national-bank>
+
+    <national-bank bank-type="SAVINGS" id="nb07b1">
+        <name>Народный банк Китая</name>
+        <country>CHINA</country>
+        <type>SAVINGS</type>
+        <depositor>И Ган</depositor>
+        <amount-on-deposit>90000000000</amount-on-deposit>
+        <time-constraints>2028-01</time-constraints>
+        <refinancing-rate>9</refinancing-rate>
+    </national-bank>
+
+    <national-bank bank-type="SAVINGS" id="nb08b1">
+        <name>Narodowy Bank Polski</name>
+        <country>POLAND</country>
+        <type>SAVINGS</type>
+        <depositor>Адам Глапиньский</depositor>
+        <amount-on-deposit>7500000000</amount-on-deposit>
+        <time-constraints>2025-01</time-constraints>
+        <refinancing-rate>10</refinancing-rate>
     </national-bank>
 </banks>
