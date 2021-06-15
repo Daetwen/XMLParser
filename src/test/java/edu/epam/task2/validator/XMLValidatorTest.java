@@ -10,6 +10,7 @@ public class XMLValidatorTest {
     private String FILE_PATH_INVALID1 = "src/test/resources/invalid1.xml";
     private String FILE_PATH_INVALID2 = "src/test/resources/invalid2.xml";
     private String FILE_PATH_INVALID3 = "src/test/resources/invalid3.xml";
+    private String FILE_PATH_INVALID4 = "src/test/resources/invalid4.xml";
 
     @Test
     public void validateXMLPositiveTest() {
@@ -32,6 +33,12 @@ public class XMLValidatorTest {
     @Test
     public void validateXMLNegativeTest3() {
         boolean actual = XMLValidator.validateXML(FILE_PATH_INVALID3, FILE_PATH_SCHEMA);
+        Assert.assertFalse(actual);
+    }
+
+    @Test
+    public void validateXMLNegativeTest4() {
+        boolean actual = XMLValidator.validateXML(FILE_PATH_INVALID4, FILE_PATH_SCHEMA);
         Assert.assertFalse(actual);
     }
 }
