@@ -76,16 +76,16 @@ public class BankBuilderFactoryTest {
         expectedSet.add(nationalBank2);
     }
 
-    @DataProvider(name = "builder-provider")
-    public Object[][] builderDataProvider() throws BanksException {
-        return new Object[][] {
-                { BankBuilderFactory.createBankBuilder("DOM")},
-                { BankBuilderFactory.createBankBuilder("SAX")},
-                { BankBuilderFactory.createBankBuilder("STAX")}
+    @DataProvider(name = "bankBuilder")
+    public Object[] builderDataProvider() throws BanksException {
+        return new Object[] {
+                BankBuilderFactory.createBankBuilder("DOM"),
+                BankBuilderFactory.createBankBuilder("SAX"),
+                BankBuilderFactory.createBankBuilder("STAX")
         };
     }
 
-    @Test(dataProvider = "builder-provider")
+    @Test(dataProvider = "bankBuilder")
     public void testBuildDevices(AbstractBankBuilder builder) throws BanksException {
         builder.buildSetBanks(FILE_PATH_VALID);
         Set<Banks> actualSet = builder.getBanks();
