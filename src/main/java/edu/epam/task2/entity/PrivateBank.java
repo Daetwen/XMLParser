@@ -55,13 +55,20 @@ public class PrivateBank extends Banks {
         if (!super.equals(object)) {
             return false;
         }
-        PrivateBank that = (PrivateBank) object;
-        return creditRate == that.creditRate && mortgageRate == that.mortgageRate;
+        PrivateBank other = (PrivateBank) object;
+        return creditRate == other.creditRate && mortgageRate == other.mortgageRate;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), creditRate, mortgageRate);
+        int prime = 31;
+        int result = 1;
+
+        result = result * prime + super.hashCode();
+        result = result * prime + Integer.hashCode(creditRate);
+        result = result * prime + Integer.hashCode(mortgageRate);
+
+        return result;
     }
 
     @Override

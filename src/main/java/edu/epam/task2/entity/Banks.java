@@ -126,29 +126,33 @@ public abstract class Banks {
             return false;
         }
         Banks banks = (Banks) object;
-        return this.amountOnDeposit == banks.amountOnDeposit &&
-                this.profitability == banks.profitability &&
-                Objects.equals(this.name, banks.name) &&
+        return Objects.equals(this.name, banks.name) &&
                 this.country == banks.country &&
                 this.type == banks.type &&
                 Objects.equals(this.depositor, banks.depositor) &&
+                this.amountOnDeposit == banks.amountOnDeposit &&
                 Objects.equals(this.timeConstraints, banks.timeConstraints) &&
                 Objects.equals(this.accountID, banks.accountID) &&
+                this.profitability == banks.profitability &&
                 this.bankType == banks.bankType;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(
-                name,
-                country,
-                type,
-                depositor,
-                amountOnDeposit,
-                timeConstraints,
-                accountID,
-                profitability,
-                bankType);
+        int prime = 31;
+        int result = 1;
+
+        result = result * prime + name.hashCode();
+        result = result * prime + country.hashCode();
+        result = result * prime + type.hashCode();
+        result = result * prime + depositor.hashCode();
+        result = result * prime + Long.hashCode(amountOnDeposit);
+        result = result * prime + timeConstraints.hashCode();
+        result = result * prime + accountID.hashCode();
+        result = result * prime + Integer.hashCode(profitability);
+        result = result * prime + bankType.hashCode();
+
+        return result;
     }
 
     @Override

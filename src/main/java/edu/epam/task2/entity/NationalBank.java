@@ -43,13 +43,19 @@ public class NationalBank extends Banks {
         if (!super.equals(object)) {
             return false;
         }
-        NationalBank that = (NationalBank) object;
-        return refinancingRate == that.refinancingRate;
+        NationalBank other = (NationalBank) object;
+        return refinancingRate == other.refinancingRate;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), refinancingRate);
+        int prime = 31;
+        int result = 1;
+
+        result = result * prime + super.hashCode();
+        result = result * prime + Integer.hashCode(refinancingRate);
+
+        return result;
     }
 
     @Override
